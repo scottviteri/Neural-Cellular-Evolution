@@ -44,3 +44,6 @@ Filtering makes it way worse
 ___________________
 
 Try making a large number of block and lambda contant 0, should be able to one shot the answer
+Indeed, but takes 6000 steps with 5 blocks, batch size 32
+Training is slowing down, perhaps because of memory build-up?
+Increased batch size not being that helpful
