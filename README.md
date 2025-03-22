@@ -1,4 +1,4 @@
-# Attention-Guided Neural Cellular Automaton
+# Neural Cellular Evolution
 
 This repository contains an implementation of Neural Cellular Automaton (NCA) with convolutional attention in PyTorch. The model uses a specialized attention mechanism to update cell states based on their 3x3 neighborhoods. 
 
