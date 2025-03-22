@@ -1,0 +1,46 @@
+Check the loss function
+Currently the state is going to all black
+
+huge grad norms
+loss is staying relatively low while average activations is going high
+periodicity in gradient norm and loss history despite no resets
+
+Actually maybe there were resets
+
+Makes sense that a ton of loss in the beginning
+ summed over image
+
+_Grade based on how much better it the image is than what it was before_
+  no that doesn't work because doesn't survive gradients
+  but I could use that to filter
+
+Hidden state channels > 3 might go high because nothing is telling them not to
+
+This version of nca unlocks learning trajectories! Eg a dot going in a circle over time
+ aka video
+
+Loss spike is inertia from first mistakes maybe?
+Samples improving per batch densely located, making it seem like it is about the region of space that the model is in
+
+MSE about the same before and after
+ so making small changes
+
+Wild oscillation
+ need some damping
+
+The question is does the loss peak and come down
+
+After 100 MSE calmed down so are rgd channel means and grad norm a bit, 
+  but hidden state stats rising
+
+Filtering improvements may not be a valid online strategy, since you may go further into negative territory without training
+
+sigma might be the issue, because additive noise! 
+ Nope
+
+A sort of integrating loss
+
+Filtering makes it way worse
+___________________
+
+Try making a large number of block and lambda contant 0, should be able to one shot the answer
